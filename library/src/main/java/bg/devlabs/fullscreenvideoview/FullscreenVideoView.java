@@ -297,4 +297,29 @@ public class FullscreenVideoView extends FrameLayout {
                     videoMediaPlayer.getVideoHeight());
         }
     }
+
+    public void play() {
+        if (videoMediaPlayer != null) {
+            videoMediaPlayer.start();
+        }
+    }
+
+    public void pause() {
+        if (videoMediaPlayer != null) {
+            videoMediaPlayer.pause();
+        }
+    }
+
+    public void seekTo(int msec) {
+        if (videoMediaPlayer != null) {
+            videoMediaPlayer.pause();
+            videoMediaPlayer.seekTo(msec);
+        }
+    }
+
+    public void setOnCompletionListener(MediaPlayer.OnCompletionListener listener) {
+        if (videoMediaPlayer != null) {
+            videoMediaPlayer.setOnCompletionListener(listener);
+        }
+    }
 }
